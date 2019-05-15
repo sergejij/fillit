@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 23:13:05 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/15 14:53:00 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 16:20:48 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,6 @@ void	ft_free_list(f_list **begin)
 		tmp = tmp1;
 	}
 	*begin = NULL;
-}
-
-void	ft_print_result(char **map)
-{
-	int k;
-
-	k = 0;
-	while (map[k])
-	{
-		ft_putstr(map[k]);
-		ft_putchar('\n');
-		k++;
-	}
-	ft_free_map(map);
 }
 
 int		ft_recursive(f_list *current_list, char **map, int size)

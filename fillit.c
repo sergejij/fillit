@@ -6,11 +6,25 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 19:42:07 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/15 14:29:57 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 16:22:17 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	ft_print_result(char **map)
+{
+	int k;
+
+	k = 0;
+	while (map[k])
+	{
+		ft_putstr(map[k]);
+		ft_putchar('\n');
+		k++;
+	}
+	ft_free_map(map);
+}
 
 int		ft_printf_mistake(char *tetramins, f_list **begin)
 {
@@ -37,6 +51,7 @@ char	*ft_opening(char **argv)
 	char	*tetramins;
 
 	ret = 0;
+	tetramins = NULL;
 	fd = open(argv[1], O_RDONLY);
 	if (read(fd, NULL, 0)
 			|| !(tetramins = (char*)malloc(sizeof(char) * ((26 * 21)))))

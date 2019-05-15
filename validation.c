@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 19:38:17 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/15 14:06:26 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 15:44:56 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 char	*ft_tetramin_sub(char *tetramins)
 {
 	char *one_square_str;
-	char *tmp;
 
 	one_square_str = ft_strsub(tetramins, 0, 20);
-	tmp = ft_strdup(tetramins + 21);
-	tetramins = ft_strdup(tmp);
-	ft_strdel(&tmp);
 	return (one_square_str);
 }
 

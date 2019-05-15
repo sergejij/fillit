@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 20:45:22 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/15 14:47:29 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 16:01:41 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,17 +83,15 @@ int		ft_validation(char *tetramins, f_list **begin, int counter_letter)
 	char	*one_square_str;
 	f_list	*tmp;
 	f_list	*new_tetramin;
-	char	*all_tetramin_cpy;
 
 	i = 21;
-	all_tetramin_cpy = ft_strdup(tetramins);
-	one_square_str = ft_tetramin_sub(all_tetramin_cpy);
+	one_square_str = ft_strsub(tetramins, 0, 20);
 	if (!(new_tetramin = ft_create_tetramin(one_square_str, counter_letter++)))
 		return (0);
 	*begin = new_tetramin;
 	while (tetramins[i])
 	{
-		one_square_str = ft_tetramin_sub(all_tetramin_cpy + i);
+		one_square_str = ft_strsub(tetramins + i, 0, 20);
 		if (!(tmp = ft_create_tetramin(one_square_str, counter_letter++)))
 			return (0);
 		new_tetramin->next = tmp;
@@ -101,6 +99,5 @@ int		ft_validation(char *tetramins, f_list **begin, int counter_letter)
 		tmp = NULL;
 		i += 21;
 	}
-//	ft_strdel(&all_tetramin_cpy);
 	return (1);
 }

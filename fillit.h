@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 23:21:38 by aestella          #+#    #+#             */
-/*   Updated: 2019/05/14 17:24:59 by ubartemi         ###   ########.fr       */
+/*   Updated: 2019/05/15 16:00:01 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct		sf_list
 	int				*coord_y;
 }					f_list;
 
+void                ft_free_list(f_list **begin);
+void                ft_free_map(char **map);
 void				ft_clean_tetramin(char **map, int j, int i,
 					f_list **current_list);
 char				**ft_copy_map_plus(int size);
@@ -43,7 +45,6 @@ f_list				*ft_create_tetramin(char *one_square_str,
 int					ft_validation(char *tetramins, f_list **begin,
 					int counter_letter);
 int					ft_make_result(f_list *begin);
-char				*ft_tetramin_sub(char *tetramins);
 int					ft_check_connect_and_hashs(char *one_str_tetr);
 int					ft_check_connects(char *tetraminos);
 int					ft_check_square_and_symbols(char *tetramins, int i);

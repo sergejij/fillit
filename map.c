@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 23:09:53 by aestella          #+#    #+#             */
-/*   Updated: 2019/05/15 14:11:23 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 15:51:04 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_new_map(int len)
 	char	**map;
 
 	i = 0;
-	if (!(map = (char**)malloc(sizeof(char*) * len + 1)))
+	if (!(map = (char**)malloc(sizeof(char*) * (len + 1))))
 		return (NULL);
 	while (i < len)
 	{
