@@ -6,11 +6,42 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 23:13:05 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/14 17:25:40 by ubartemi         ###   ########.fr       */
+/*   Updated: 2019/05/15 14:53:00 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	ft_free_map(char **map)
+{
+	int i;
+
+	i = 0;
+	while (map[i])
+	{
+		ft_strdel(&(map[i]));
+		i++;
+	}
+	free(map);
+	map = NULL;
+}
+
+void	ft_free_list(f_list **begin)
+{
+	f_list *tmp;
+	f_list *tmp1;
+
+	tmp = *begin;
+	while (tmp)
+	{
+		tmp1 = tmp->next;
+		free(tmp->coord_x);
+		free(tmp->coord_y);
+		free(tmp);
+		tmp = tmp1;
+	}
+	*begin = NULL;
+}
 
 void	ft_print_result(char **map)
 {
@@ -23,6 +54,7 @@ void	ft_print_result(char **map)
 		ft_putchar('\n');
 		k++;
 	}
+	ft_free_map(map);
 }
 
 int		ft_recursive(f_list *current_list, char **map, int size)
@@ -77,6 +109,7 @@ int		ft_listsize(f_list *begin_list)
 int		ft_make_result(f_list *begin)
 {
 	char	**map;
+	char	**tmp;
 	f_list	*start;
 	int		size;
 	int		lst_size;
@@ -90,14 +123,12 @@ int		ft_make_result(f_list *begin)
 	while (!(ft_recursive(start, map, size)))
 	{
 		size++;
-		map = ft_copy_map_plus(size);
+		tmp = ft_copy_map_plus(size);
+		ft_free_map(map);
+		map = tmp;
+		tmp = NULL;
 	}
 	ft_print_result(map);
-	while (start)
-	{
-		free(start->coord_x);
-		free(start->coord_y);
-		start = start->next;
-	}
+	ft_free_list(&start);
 	return (1);
 }

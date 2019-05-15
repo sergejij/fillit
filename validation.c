@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 19:38:17 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/14 17:38:20 by ubartemi         ###   ########.fr       */
+/*   Updated: 2019/05/15 14:06:26 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ int		ft_check_connects(char *tetraminos)
 				connect++;
 			if (tetraminos[i - 1] && tetraminos[i - 1] == '#')
 				connect++;
-			if (tetraminos[i + 5] && tetraminos[i + 5] == '#')
+			if (i + 5 < 21 && tetraminos[i + 5] && tetraminos[i + 5] == '#')
 				connect++;
-			if (tetraminos[i - 5] && tetraminos[i - 5] == '#')
+			if (i - 5 >= 0 && tetraminos[i - 5] && tetraminos[i - 5] == '#')
 				connect++;
 			if (connect < 1)
 				return (0);

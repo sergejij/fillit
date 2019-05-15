@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 20:45:22 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/14 17:25:58 by ubartemi         ###   ########.fr       */
+/*   Updated: 2019/05/15 14:47:29 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,6 @@ int		ft_validation(char *tetramins, f_list **begin, int counter_letter)
 		tmp = NULL;
 		i += 21;
 	}
-	ft_strdel(&all_tetramin_cpy);
+//	ft_strdel(&all_tetramin_cpy);
 	return (1);
 }
