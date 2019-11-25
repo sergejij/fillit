@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 19:42:07 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/15 16:22:17 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 17:08:50 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_print_result(char **map)
 	ft_free_map(map);
 }
 
-int		ft_printf_mistake(char *tetramins, f_list **begin)
+int		ft_printf_mistake(char *tetramins, t_lst **begin)
 {
 	int		i;
 
@@ -73,7 +73,7 @@ char	*ft_opening(char **argv)
 int		main(int argc, char **argv)
 {
 	char	*tetramins;
-	f_list	*begin;
+	t_lst	*begin;
 
 	begin = NULL;
 	if (argc == 1)

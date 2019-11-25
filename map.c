@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 23:09:53 by aestella          #+#    #+#             */
-/*   Updated: 2019/05/15 15:51:04 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 15:52:55 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	**ft_new_map(int len)
 	return (map);
 }
 
-int		ft_check_and_place(char **map, int j, int i, f_list **current_list)
+int		ft_check_and_place(char **map, int j, int i, t_lst **current_list)
 {
 	int count;
 	int *x;
@@ -86,7 +86,7 @@ char	**ft_copy_map_plus(int size)
 	return (new_map);
 }
 
-void	ft_clean_tetramin(char **map, int j, int i, f_list **current_list)
+void	ft_clean_tetramin(char **map, int j, int i, t_lst **current_list)
 {
 	int count;
 	int *x;

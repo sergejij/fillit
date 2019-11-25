@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 23:21:38 by aestella          #+#    #+#             */
-/*   Updated: 2019/05/15 16:00:01 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 17:11:59 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,34 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 
-typedef struct		sf_list
+typedef struct		s_lst
 {
-	struct sf_list	*next;
+	struct s_lst	*next;
 	char			letter;
 	int				*coord_x;
 	int				*coord_y;
-}					f_list;
+}					t_lst;
 
-void                ft_free_list(f_list **begin);
-void                ft_free_map(char **map);
+void				ft_free_list(t_lst **begin);
+void				ft_free_map(char **map);
 void				ft_clean_tetramin(char **map, int j, int i,
-					f_list **current_list);
+		t_lst **current_list);
 char				**ft_copy_map_plus(int size);
 int					ft_move_tetramin(int *arr, char direct);
 int					ft_check_and_place(char **map, int j, int i,
-					f_list **current_list);
+		t_lst **current_list);
 char				**ft_new_map(int len);
-int					ft_listsize(f_list *begin_list);
-int					ft_recursive(f_list *current_list, char **map, int size);
+int					ft_listsize(t_lst *begin_list);
+int					ft_recursive(t_lst *current_list, char **map, int size);
 void				ft_print_result(char **map);
 void				ft_add_coordinats2(char *one_str_tetr, int *coordinats_x,
-					int *coordinats_y, int k);
-int					ft_add_coordinats(f_list *current, char *one_str_tetr);
-f_list				*ft_create_tetramin(char *one_square_str,
-					int counter_letter);
-int					ft_validation(char *tetramins, f_list **begin,
-					int counter_letter);
-int					ft_make_result(f_list *begin);
+		int *coordinats_y, int k);
+int					ft_add_coordinats(t_lst *current, char *one_str_tetr);
+t_lst				*ft_create_tetramin(char *one_square_str,
+		int counter_letter);
+int					ft_validation(char *tetramins, t_lst **begin,
+		int counter_letter);
+int					ft_make_result(t_lst *begin);
 int					ft_check_connect_and_hashs(char *one_str_tetr);
 int					ft_check_connects(char *tetraminos);
 int					ft_check_square_and_symbols(char *tetramins, int i);

@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 23:13:05 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/15 16:20:48 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 17:08:50 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	ft_free_map(char **map)
 	map = NULL;
 }
 
-void	ft_free_list(f_list **begin)
+void	ft_free_list(t_lst **begin)
 {
-	f_list *tmp;
-	f_list *tmp1;
+	t_lst *tmp;
+	t_lst *tmp1;
 
 	tmp = *begin;
 	while (tmp)
@@ -43,7 +43,7 @@ void	ft_free_list(f_list **begin)
 	*begin = NULL;
 }
 
-int		ft_recursive(f_list *current_list, char **map, int size)
+int		ft_recursive(t_lst *current_list, char **map, int size)
 {
 	int i;
 	int j;
@@ -71,10 +71,10 @@ int		ft_recursive(f_list *current_list, char **map, int size)
 	return (0);
 }
 
-int		ft_listsize(f_list *begin_list)
+int		ft_listsize(t_lst *begin_list)
 {
 	int		i;
-	f_list	*temp;
+	t_lst	*temp;
 
 	i = 0;
 	temp = begin_list;
@@ -92,11 +92,11 @@ int		ft_listsize(f_list *begin_list)
 	return (i);
 }
 
-int		ft_make_result(f_list *begin)
+int		ft_make_result(t_lst *begin)
 {
 	char	**map;
 	char	**tmp;
-	f_list	*start;
+	t_lst	*start;
 	int		size;
 	int		lst_size;
 

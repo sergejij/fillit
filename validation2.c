@@ -6,7 +6,7 @@
 /*   By: ubartemi <ubartemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 20:45:22 by ubartemi          #+#    #+#             */
-/*   Updated: 2019/05/15 16:01:41 by aestella         ###   ########.fr       */
+/*   Updated: 2019/05/15 17:08:50 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_add_coordinats2(char *one_str_tetr,
 	}
 }
 
-int		ft_add_coordinats(f_list *current, char *one_str_tetr)
+int		ft_add_coordinats(t_lst *current, char *one_str_tetr)
 {
 	int *coordinats_x;
 	int *coordinats_y;
@@ -57,17 +57,17 @@ int		ft_add_coordinats(f_list *current, char *one_str_tetr)
 	return (1);
 }
 
-f_list	*ft_create_tetramin(char *one_square_str, int counter_letter)
+t_lst	*ft_create_tetramin(char *one_square_str, int counter_letter)
 {
 	int		i;
 	int		j;
-	f_list	*new_elem;
+	t_lst	*new_elem;
 
 	i = 0;
 	j = 0;
 	if (!(ft_check_connect_and_hashs(one_square_str)))
 		return (NULL);
-	if (!(new_elem = (f_list*)malloc(sizeof(f_list))))
+	if (!(new_elem = (t_lst*)malloc(sizeof(t_lst))))
 		return (NULL);
 	new_elem->letter = 'A' + counter_letter;
 	new_elem->next = NULL;
@@ -77,12 +77,12 @@ f_list	*ft_create_tetramin(char *one_square_str, int counter_letter)
 	return (new_elem);
 }
 
-int		ft_validation(char *tetramins, f_list **begin, int counter_letter)
+int		ft_validation(char *tetramins, t_lst **begin, int counter_letter)
 {
 	int		i;
 	char	*one_square_str;
-	f_list	*tmp;
-	f_list	*new_tetramin;
+	t_lst	*tmp;
+	t_lst	*new_tetramin;
 
 	i = 21;
 	one_square_str = ft_strsub(tetramins, 0, 20);
